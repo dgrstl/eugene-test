@@ -1,17 +1,13 @@
 openapi: 3.0.3
-
 info:
   title: My Api
   description: My Api
   version: 1.0.0
   contact: {}
-
 servers:
-  - url: http://localhost:3000
-
+  - url: 'http://localhost:3000'
 tags:
   - name: rules
-
 components:
   examples:
     requestExample:
@@ -35,9 +31,8 @@ components:
       required: true
       schema:
         type: string
-
 paths:
-  /rule/{id}:
+  '/rule/{id}':
     get:
       tags:
         - rules
@@ -46,15 +41,16 @@ paths:
       parameters:
         - $ref: '#/components/parameters/RuleId'
       responses:
-        "200":
+        '200':
           description: Returns a rule
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Rule"
+                $ref: '#/components/schemas/Rule'
               examples:
                 responseExample:
-                  $ref: "./responseExample"
+                  value:
+                    $ref: ./responseExample.yml
     put:
       tags:
         - rules
@@ -69,20 +65,19 @@ paths:
               type: object
               properties:
                 rule:
-                  $ref: "#/components/schemas/Rule"
+                  $ref: '#/components/schemas/Rule'
               required:
                 - rule
             examples:
               requestExample:
-                $ref: "#/components/examples/requestExample"
-
+                $ref: '#/components/examples/requestExample'
       responses:
-        "200":
+        '200':
           description: Returns a rule
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Rule"
+                $ref: '#/components/schemas/Rule'
               examples:
                 responseExample:
-                  $ref: "#/components/examples/responseExample"
+                  $ref: '#/components/examples/responseExample'
