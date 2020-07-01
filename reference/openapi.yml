@@ -54,7 +54,7 @@ paths:
                 $ref: "#/components/schemas/Rule"
               examples:
                 responseExample:
-                  $ref: "#/components/examples/responseExample"
+                  $ref: "./responseExample"
     put:
       tags:
         - rules
